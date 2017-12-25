@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC7F63AB-D66E-4410-B0A5-D4B326BB6112}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vol.ESystems.Core.Library.XBRL.Model</RootNamespace>
+    <AssemblyName>Vol.ESystems.Core.Library.XBRL.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountantAddress.cs" />
+    <Compile Include="AccountantAddressStreet2.cs" />
+    <Compile Include="AccountantBuildingNumber.cs" />
+    <Compile Include="AccountantCity.cs" />
+    <Compile Include="AccountantContactEmail.cs" />
+    <Compile Include="AccountantContactEmailAddress.cs" />
+    <Compile Include="AccountantContactFax.cs" />
+    <Compile Include="AccountantContactFaxNumber.cs" />
+    <Compile Include="AccountantContactInformation.cs" />
+    <Compile Include="AccountantContactPhone.cs" />
+    <Compile Include="AccountantContactPhoneNumber.cs" />
+    <Compile Include="AccountantContactPhoneNumberDescription.cs" />
+    <Compile Include="AccountantCountry.cs" />
+    <Compile Include="AccountantEngagementTypeDescription.cs" />
+    <Compile Include="AccountantInformation.cs" />
+    <Compile Include="AccountantName.cs" />
+    <Compile Include="AccountantStreet.cs" />
+    <Compile Include="AccountantZipOrPostalCode.cs" />
+    <Compile Include="AccountingEntries.cs" />
+    <Compile Include="AccountMainDescription.cs" />
+    <Compile Include="AccountMainID.cs" />
+    <Compile Include="AccountSub.cs" />
+    <Compile Include="AccountSubDescription.cs" />
+    <Compile Include="AccountSubID.cs" />
+    <Compile Include="Amount.cs" />
+    <Compile Include="BusinessDescription.cs" />
+    <Compile Include="CanonicalizationMethod.cs" />
+    <Compile Include="Cert.cs" />
+    <Compile Include="CertDigest.cs" />
+    <Compile Include="ClaimedRoles.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="CreationDate.cs" />
+    <Compile Include="Creator.cs" />
+    <Compile Include="DebitCreditCode.cs" />
+    <Compile Include="Defter.cs" />
+    <Compile Include="DetailComment.cs" />
+    <Compile Include="DigestMethod.cs" />
+    <Compile Include="DocumentDate.cs" />
+    <Compile Include="DocumentInfo.cs" />
+    <Compile Include="DocumentNumber.cs" />
+    <Compile Include="DocumentReference.cs" />
+    <Compile Include="DocumentType.cs" />
+    <Compile Include="EnteredBy.cs" />
+    <Compile Include="EnteredDate.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityEmailAddress.cs" />
+    <Compile Include="EntityEmailAddressStructure.cs" />
+    <Compile Include="EntityFaxNumber.cs" />
+    <Compile Include="EntityFaxNumberStructure.cs" />
+    <Compile Include="EntityInformation.cs" />
+    <Compile Include="EntityPhoneNumber.cs" />
+    <Compile Include="EntityWebSite.cs" />
+    <Compile Include="EntriesComment.cs" />
+    <Compile Include="EntriesType.cs" />
+    <Compile Include="EntryComment.cs" />
+    <Compile Include="EntryDetail.cs" />
+    <Compile Include="EntryHeader.cs" />
+    <Compile Include="EntryNumber.cs" />
+    <Compile Include="EntryNumberCounter.cs" />
+    <Compile Include="FiscalYearEnd.cs" />
+    <Compile Include="FiscalYearStart.cs" />
+    <Compile Include="Identifier.cs" />
+    <Compile Include="IssuerSerial.cs" />
+    <Compile Include="KeyInfo.cs" />
+    <Compile Include="KeyValue.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="LineNumber.cs" />
+    <Compile Include="LineNumberCounter.cs" />
+    <Compile Include="XBRLObject.cs" />
+    <Compile Include="OrganizationAddress.cs" />
+    <Compile Include="OrganizationAddressCity.cs" />
+    <Compile Include="OrganizationAddressCountry.cs" />
+    <Compile Include="OrganizationAddressStreet.cs" />
+    <Compile Include="OrganizationAddressStreet2.cs" />
+    <Compile Include="OrganizationAddressZipOrPostalCode.cs" />
+    <Compile Include="OrganizationBuildingNumber.cs" />
+    <Compile Include="OrganizationDescription.cs" />
+    <Compile Include="OrganizationIdentifier.cs" />
+    <Compile Include="OrganizationIdentifiers.cs" />
+    <Compile Include="PaymentMethod.cs" />
+    <Compile Include="Period.cs" />
+    <Compile Include="PeriodCoveredEnd.cs" />
+    <Compile Include="PeriodCoveredStart.cs" />
+    <Compile Include="PhoneNumber.cs" />
+    <Compile Include="PhoneNumberDescription.cs" />
+    <Compile Include="PostingDate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QualifyingProperties.cs" />
+    <Compile Include="Reference.cs" />
+    <Compile Include="RSAKeyValue.cs" />
+    <Compile Include="SchemaRef.cs" />
+    <Compile Include="Signature.cs" />
+    <Compile Include="SignatureMethod.cs" />
+    <Compile Include="SignatureValue.cs" />
+    <Compile Include="SignedInfo.cs" />
+    <Compile Include="SignedProperties.cs" />
+    <Compile Include="SignedSignatureProperties.cs" />
+    <Compile Include="SignerRole.cs" />
+    <Compile Include="SigningCertificate.cs" />
+    <Compile Include="SourceApplication.cs" />
+    <Compile Include="TotalCredit.cs" />
+    <Compile Include="TotalDebit.cs" />
+    <Compile Include="Transform.cs" />
+    <Compile Include="Transforms.cs" />
+    <Compile Include="UniqueID.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="WebSiteURL.cs" />
+    <Compile Include="X509Data.cs" />
+    <Compile Include="Xbrl.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

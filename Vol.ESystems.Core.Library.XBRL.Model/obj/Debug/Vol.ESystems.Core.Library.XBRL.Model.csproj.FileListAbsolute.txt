@@ -1,0 +1,6 @@
+C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.Model\bin\Debug\Vol.ESystems.Core.Library.XBRL.Model.dll
+C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.Model\bin\Debug\Vol.ESystems.Core.Library.XBRL.Model.pdb
+C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.Model\obj\Debug\Vol.ESystems.Core.Library.XBRL.Model.csprojResolveAssemblyReference.cache
+C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.Model\obj\Debug\Vol.ESystems.Core.Library.XBRL.Model.csproj.CoreCompileInputs.cache
+C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.Model\obj\Debug\Vol.ESystems.Core.Library.XBRL.Model.dll
+C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.Model\obj\Debug\Vol.ESystems.Core.Library.XBRL.Model.pdb
