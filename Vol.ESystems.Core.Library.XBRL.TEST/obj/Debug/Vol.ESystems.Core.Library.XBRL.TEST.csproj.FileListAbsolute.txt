@@ -9,3 +9,14 @@ C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.X
 C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.TEST\obj\Debug\Vol.ESystems.Core.Library.XBRL.TEST.csproj.CoreCompileInputs.cache
 C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.TEST\obj\Debug\Vol.ESystems.Core.Library.XBRL.TEST.exe
 C:\Users\Volant_Yazılım4\source\repos\Vol.ESystems\Vol.ESystems.Core.Library.XBRL.TEST\obj\Debug\Vol.ESystems.Core.Library.XBRL.TEST.pdb
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\bin\Debug\Vol.ESystems.Core.Library.XBRL.TEST.exe.config
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\bin\Debug\Vol.ESystems.Core.Library.XBRL.TEST.exe
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\bin\Debug\Vol.ESystems.Core.Library.XBRL.TEST.pdb
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\bin\Debug\Vol.ESystems.Core.Library.XBRL.Base.dll
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\bin\Debug\Vol.ESystems.Core.Library.XBRL.Model.dll
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\bin\Debug\Vol.ESystems.Core.Library.XBRL.Base.pdb
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\bin\Debug\Vol.ESystems.Core.Library.XBRL.Model.pdb
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\obj\Debug\Vol.ESystems.Core.Library.XBRL.TEST.csprojResolveAssemblyReference.cache
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\obj\Debug\Vol.ESystems.Core.Library.XBRL.TEST.csproj.CoreCompileInputs.cache
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\obj\Debug\Vol.ESystems.Core.Library.XBRL.TEST.exe
+C:\VolantESystems\Vol.ESystems.Core.Library.XBRL.TEST\obj\Debug\Vol.ESystems.Core.Library.XBRL.TEST.pdb

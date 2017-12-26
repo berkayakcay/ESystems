@@ -3,6 +3,13 @@ using System.Xml.Serialization;
 
 namespace Vol.ESystems.Core.Library.XBRL.Model
 {
+
+    /// <summary>
+    /// Kayýt Bilgisi
+    /// Muhasebe kayýtlarýný tutan defter bölümü
+    /// Yevmiye ; Bir yevmiye maddesi
+    /// Kebir   ; Bir ana hesap
+    /// </summary>
     [XmlRoot(ElementName = "entryHeader", Namespace = "http://www.xbrl.org/int/gl/cor/2006-10-25")]
     public class EntryHeader
     {

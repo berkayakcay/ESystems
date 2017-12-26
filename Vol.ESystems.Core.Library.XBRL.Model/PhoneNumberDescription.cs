@@ -2,6 +2,9 @@ using System.Xml.Serialization;
 
 namespace Vol.ESystems.Core.Library.XBRL.Model
 {
+    /// <summary>
+    /// Ýþletme Telefon Numarasý Açýklamasý
+    /// </summary>
     [XmlRoot(ElementName = "phoneNumberDescription", Namespace = "http://www.xbrl.org/int/gl/bus/2006-10-25")]
     public class PhoneNumberDescription
     {

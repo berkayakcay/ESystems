@@ -535,6 +535,7 @@ namespace Vol.ESystems.Core.Library.XBRL.TEST
 
             };
 
+            entryHeaders.Add(entryHeader);
 
             return entryHeaders;
         }
