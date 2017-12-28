@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Security;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 using Vol.ESystems.Core.Library.XBRL.Base;
 using Vol.ESystems.Core.Library.XBRL.Model;
+using Reference = System.Security.Cryptography.Xml.Reference;
 
 
 namespace Vol.ESystems.Core.Library.XBRL.TEST
@@ -15,6 +21,14 @@ namespace Vol.ESystems.Core.Library.XBRL.TEST
         static void Main(string[] args)
         {
             test:
+
+            GetYevmiye();
+
+            goto test;
+        }
+
+        private static void GetYevmiye()
+        {
             Defter defter = new Defter()
             {
                 Xbrl = new Xbrl()
@@ -288,130 +302,130 @@ namespace Vol.ESystems.Core.Library.XBRL.TEST
                         },
                         //Entity Headers
                     }
-                },
-                Signature = new Signature()
-                {
-                    Id = "Signature_Id_46dcb742-b202-4691-bc6e-7527ca673d8e",
-                    SignedInfo = new SignedInfo()
-                    {
-                        Id = "Signed_Info_9dc00acc-5eea-477e-a50e-b3d94aa61acd",
-                        CanonicalizationMethod = new CanonicalizationMethod()
-                        {
-                            Algorithm = "http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"
-                        },
-                        SignatureMethod = new SignatureMethod()
-                        {
-                            Algorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
-                        },
-                        Reference = new List<Reference>()
-                        {
-                            new Reference()
-                            {
-                                URI = "",
-                                Transforms = new Transforms()
-                                {
-                                    Transform = new Transform()
-                                    {
-                                        Algorithm = "http://www.w3.org/2000/09/xmldsig#enveloped-signature"
-                                    }
-                                },
-                                DigestMethod = new DigestMethod()
-                                {
-                                    Algorithm = "http://www.w3.org/2001/04/xmlenc#sha256"
-                                },
-                                DigestValue = "+CaODsq6rb25LWtQovbuIUwLPWdQn6VxyNe8LGc9kzI="
-                            },
-                            new Reference()
-                            {
-                                Id = "Prop_Ref_Id_9bd4ffb2-eb26-4484-afdb-8d38d79c04a9",
-                                Type = "http://uri.etsi.org/01903#SignedProperties",
-                                URI = "#Prop_Id_18a71503-483a-4519-ac0f-2a35f28d69ac",
-                                DigestMethod = new DigestMethod()
-                                {
-                                    Algorithm = "http://www.w3.org/2001/04/xmlenc#sha256"
-                                },
-                                DigestValue = "V1psBlUUtQZ+PTOq/zv3nGls0cTtWtWfp9umYNXI6nw="
-                            }
-                        }
-                    },
-                    SignatureValue = new SignatureValue()
-                    {
-                         Id = "Signature_Value_2e5ae898-670e-440d-a4ab-ad64884ebc8b",
-                         Text = "H0406bwVGwUWwrbz97tOF5lIiOEo1vhxBbVoOESst3lL/4yGx8FJDItzNXdblTswhd8ev75xLJ1+//9rVMeblVBYI2RGEVmLsdS0XGl9WxP9hYmyesenvIwHlUxv1daeU64IfJPUBuOzmks3kA85Phie54U9ZjXY2liMpuSuQoL/GW1aQhzXI+I9rsnczP2b2Ts3EyjUfAQlEUYiK9dQ3Ku3b/vLGEu4D/wFV6UMnOhuUabbhZ43NxWDCiVt2voB+itOAZSy6zkp6vwospJr5L5EXnKi5dUZ5e4ybsKJfIZF/8ejUuoPwOjhkK5WfEL8+wf43A15o6GSWuhnCIR2AQ=="
-                    },
-                    KeyInfo = new KeyInfo()
-                    {
-                        KeyValue = new KeyValue()
-                        {
-                            RSAKeyValue = new RSAKeyValue()
-                            {
-                                Modulus = "hzz1s1AZoYRMCk8HEzcX2f5mNlSP1ZtvHF1iwZPl+mJm3nm2t2enYxccyxuUZukJfHL+dgsn8Wc3GojAfZGp7HFKDGwTYf+rxaHbjooyUzbZIYGiR1RLwXs1J3nwwnoty9QHLqF0FL8gIWhs5Em/CeldV02CVtL8rgkUWA+42flOAYS69WPvB0192gw26vTTf+yIlnmggm3dOEipiGZUCkJ6wmFFfV2f6GDx0TF6ztXA4iVDadEtbKDaH+ucGdHOIMAihP1YwK18oYfJLZsLlsrx+3U4kBOwLOSPU06/lALEC1pN+zLU+Qi52nfyTI95Csw/VNNtSvVI8FaoZo2QEQ==",
-                                Exponent = "AQAB"
-                            }
-                        },
-                        X509Data = new X509Data()
-                        {
-                            X509Certificate = "CN=Test Kurum Sekiz,2.5.4.5=#130a31323334353637383038",
-                            X509SubjectName = "MIIFiTCCBHGgAwIBAgIIAPSDtsQCYcEwDQYJKoZIhvcNAQELBQAwXDELMAkGA1UEBhMCVFIxTTBLBgNVBAMMRE1hbGkgTcO8aMO8ciBFbGVrdHJvbmlrIFNlcnRpZmlrYSBIaXptZXQgU2HEn2xhecSxY8Sxc8SxIC0gU8O8csO8bSAxMB4XDTE2MDIxMDE1MTAzM1oXDTE5MDIwOTE1MTAzM1owMDETMBEGA1UEBRMKMTIzNDU2NzgwODEZMBcGA1UEAwwQVGVzdCBLdXJ1bSBTZWtpejCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIc89bNQGaGETApPBxM3F9n+ZjZUj9WbbxxdYsGT5fpiZt55trdnp2MXHMsblGbpCXxy/nYLJ/FnNxqIwH2RqexxSgxsE2H/q8Wh246KMlM22SGBokdUS8F7NSd58MJ6LcvUBy6hdBS/ICFobORJvwnpXVdNglbS/K4JFFgPuNn5TgGEuvVj7wdNfdoMNur003/siJZ5oIJt3ThIqYhmVApCesJhRX1dn+hg8dExes7VwOIlQ2nRLWyg2h/rnBnRziDAIoT9WMCtfKGHyS2bC5bK8ft1OJATsCzkj1NOv5QCxAtaTfsy1PkIudp38kyPeQrMP1TTbUr1SPBWqGaNkBECAwEAAaOCAnkwggJ1MB8GA1UdIwQYMBaAFEYgqVMbKAwcrvIoUYOzHr7yUxR8MB0GA1UdDgQWBBTi+/Z/uhu1Gxo8y9cuLIShB0aLPzAOBgNVHQ8BAf8EBAMCB4AwggEzBgNVHSAEggEqMIIBJjCCASIGC2CGGAECAQEFBwQBMIIBETAqBggrBgEFBQcCARYeaHR0cDovL2RlcG8ua2FtdXNtLmdvdi50ci9pbGtlMIHiBggrBgEFBQcCAjCB1R6B0gBCAHUAIABzAGUAcgB0AGkAZgBpAGsAYQAgAGkAbABlACAAaQBsAGcAaQBsAGkAIABzAGUAcgB0AGkAZgBpAGsAYQAgAHUABnAHUAbABhAG0AYQAgAGUAcwBhAHMAbABhAHIBMQBuATEAIABvAGsAdQBtAGEAawAgAGkA5wBpAG4AIABiAGUAbABpAHIAdABpAGwAZQBuACAAdwBlAGIAIABzAGkAdABlAHMAaQBuAGkAIAB6AGkAeQBhAHIAZQB0ACAAZQBkAGkAbgBpAHoALjAMBgNVHRMBAf8EAjAAMBYGA1UdJQQPMA0GC2CGGAECAQEFBzIBMEEGA1UdHwQ6MDgwNqA0oDKGMGh0dHA6Ly9kZXBvLmthbXVzbS5nb3YudHIva3VydW1zYWwvbW1lc2hzLXMxLmNybDCBggYIKwYBBQUHAQEEdjB0MDwGCCsGAQUFBzAChjBodHRwOi8vZGVwby5rYW11c20uZ292LnRyL2t1cnVtc2FsL21tZXNocy1zMS5jcnQwNAYIKwYBBQUHMAGGKGh0dHA6Ly9jaXNkdXBtbXMxLmt1cnVtc2FsLmthbXVzbS5nb3YudHIwDQYJKoZIhvcNAQELBQADggEBAIrY0OlTatDnCNPg6o49ZrTAubYb9+iHEH9LNF73WbgM3okmaSNnJGo8bwqlACbbKbZhXTh6MUqBo12RqbWxn9t5MdKTjGa/pQtuxmCDMpi/nYzAw6OZ9xMt5y8Ask0mBGAQA2K4tdfGmjuBox+K7o/rNfYkUmYi3JjPtl3XvVjOzWgD9FQn5/SVbELaR21omJNhnKXO3B+8aZHE/2UP5kXwXBdSRNOQkUAt+oRwl+s4tX6BGbx3TPMM0gmd51op8nzT4A07063v0Z2Xz8+dhIR3S40MVErJDxqkMTMuw/Kpue6Fpv2Wg6sndvOXjNnMIXUtKvFh3Iqb+zDeAo0NTVw="
-                        }
-                    },
-                    Object = new XBRLObject()
-                    {
-                        QualifyingProperties = new QualifyingProperties()
-                        {
-                            SignedProperties = new SignedProperties()
-                            {
-                                Id = "Prop_Id_18a71503-483a-4519-ac0f-2a35f28d69ac",
-                                SignedSignatureProperties = new SignedSignatureProperties()
-                                {
-                                    SignerRole = new SignerRole()
-                                    {
-                                        ClaimedRoles = new ClaimedRoles()
-                                        {
-                                            ClaimedRole = "Tedarikçi"
-                                        }
-                                    },
-                                    SigningCertificate = new SigningCertificate()
-                                    {
-                                        Cert = new Cert()
-                                        {
-                                            CertDigest = new CertDigest()
-                                            {
-                                                DigestMethod = new DigestMethod()
-                                                {
-                                                    Algorithm = "http://www.w3.org/2001/04/xmlenc#sha256"
-                                                },
-                                                DigestValue = "k+Em8GKG/ahjqDmwrDylKkac9bzuC/5RmitlEwNFNuM="
-                                            },
-                                            IssuerSerial = new IssuerSerial()
-                                            {
-                                                X509IssuerName = "CN=Mali Mühür Elektronik Sertifika Hizmet Sağlayıcısı - Sürüm 1, C=TR",
-                                                X509SerialNumber = "68824715313177025"
-                                            }
-                                        }
-                                    },
-                                    SigningTime = "2017-04-06T14:51:12.775+03:00"
-                                }
-                            },
-                            Target = "#Signature_Id_46dcb742-b202-4691-bc6e-7527ca673d8e"
-                        }
-                    }
                 }
+                #region Signature
+
+                //Signature = new Signature()
+                //{
+                //    Id = "Signature_Id_46dcb742-b202-4691-bc6e-7527ca673d8e",
+                //    SignedInfo = new SignedInfo()
+                //    {
+                //        Id = "Signed_Info_9dc00acc-5eea-477e-a50e-b3d94aa61acd",
+                //        CanonicalizationMethod = new CanonicalizationMethod()
+                //        {
+                //            Algorithm = "http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"
+                //        },
+                //        SignatureMethod = new SignatureMethod()
+                //        {
+                //            Algorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+                //        },
+                //        Reference = new List<Reference>()
+                //        {
+                //            new Reference()
+                //            {
+                //                URI = "",
+                //                Transforms = new Transforms()
+                //                {
+                //                    Transform = new Transform()
+                //                    {
+                //                        Algorithm = "http://www.w3.org/2000/09/xmldsig#enveloped-signature"
+                //                    }
+                //                },
+                //                DigestMethod = new DigestMethod()
+                //                {
+                //                    Algorithm = "http://www.w3.org/2001/04/xmlenc#sha256"
+                //                },
+                //                DigestValue = "+CaODsq6rb25LWtQovbuIUwLPWdQn6VxyNe8LGc9kzI="
+                //            },
+                //            new Reference()
+                //            {
+                //                Id = "Prop_Ref_Id_9bd4ffb2-eb26-4484-afdb-8d38d79c04a9",
+                //                Type = "http://uri.etsi.org/01903#SignedProperties",
+                //                URI = "#Prop_Id_18a71503-483a-4519-ac0f-2a35f28d69ac",
+                //                DigestMethod = new DigestMethod()
+                //                {
+                //                    Algorithm = "http://www.w3.org/2001/04/xmlenc#sha256"
+                //                },
+                //                DigestValue = "V1psBlUUtQZ+PTOq/zv3nGls0cTtWtWfp9umYNXI6nw="
+                //            }
+                //        }
+                //    },
+                //    SignatureValue = new SignatureValue()
+                //    {
+                //        Id = "Signature_Value_2e5ae898-670e-440d-a4ab-ad64884ebc8b",
+                //        Text = "H0406bwVGwUWwrbz97tOF5lIiOEo1vhxBbVoOESst3lL/4yGx8FJDItzNXdblTswhd8ev75xLJ1+//9rVMeblVBYI2RGEVmLsdS0XGl9WxP9hYmyesenvIwHlUxv1daeU64IfJPUBuOzmks3kA85Phie54U9ZjXY2liMpuSuQoL/GW1aQhzXI+I9rsnczP2b2Ts3EyjUfAQlEUYiK9dQ3Ku3b/vLGEu4D/wFV6UMnOhuUabbhZ43NxWDCiVt2voB+itOAZSy6zkp6vwospJr5L5EXnKi5dUZ5e4ybsKJfIZF/8ejUuoPwOjhkK5WfEL8+wf43A15o6GSWuhnCIR2AQ=="
+                //    },
+                //    KeyInfo = new KeyInfo()
+                //    {
+                //        KeyValue = new KeyValue()
+                //        {
+                //            RSAKeyValue = new RSAKeyValue()
+                //            {
+                //                Modulus = "hzz1s1AZoYRMCk8HEzcX2f5mNlSP1ZtvHF1iwZPl+mJm3nm2t2enYxccyxuUZukJfHL+dgsn8Wc3GojAfZGp7HFKDGwTYf+rxaHbjooyUzbZIYGiR1RLwXs1J3nwwnoty9QHLqF0FL8gIWhs5Em/CeldV02CVtL8rgkUWA+42flOAYS69WPvB0192gw26vTTf+yIlnmggm3dOEipiGZUCkJ6wmFFfV2f6GDx0TF6ztXA4iVDadEtbKDaH+ucGdHOIMAihP1YwK18oYfJLZsLlsrx+3U4kBOwLOSPU06/lALEC1pN+zLU+Qi52nfyTI95Csw/VNNtSvVI8FaoZo2QEQ==",
+                //                Exponent = "AQAB"
+                //            }
+                //        },
+                //        X509Data = new X509Data()
+                //        {
+                //            X509Certificate = "CN=Test Kurum Sekiz,2.5.4.5=#130a31323334353637383038",
+                //            X509SubjectName = "MIIFiTCCBHGgAwIBAgIIAPSDtsQCYcEwDQYJKoZIhvcNAQELBQAwXDELMAkGA1UEBhMCVFIxTTBLBgNVBAMMRE1hbGkgTcO8aMO8ciBFbGVrdHJvbmlrIFNlcnRpZmlrYSBIaXptZXQgU2HEn2xhecSxY8Sxc8SxIC0gU8O8csO8bSAxMB4XDTE2MDIxMDE1MTAzM1oXDTE5MDIwOTE1MTAzM1owMDETMBEGA1UEBRMKMTIzNDU2NzgwODEZMBcGA1UEAwwQVGVzdCBLdXJ1bSBTZWtpejCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIc89bNQGaGETApPBxM3F9n+ZjZUj9WbbxxdYsGT5fpiZt55trdnp2MXHMsblGbpCXxy/nYLJ/FnNxqIwH2RqexxSgxsE2H/q8Wh246KMlM22SGBokdUS8F7NSd58MJ6LcvUBy6hdBS/ICFobORJvwnpXVdNglbS/K4JFFgPuNn5TgGEuvVj7wdNfdoMNur003/siJZ5oIJt3ThIqYhmVApCesJhRX1dn+hg8dExes7VwOIlQ2nRLWyg2h/rnBnRziDAIoT9WMCtfKGHyS2bC5bK8ft1OJATsCzkj1NOv5QCxAtaTfsy1PkIudp38kyPeQrMP1TTbUr1SPBWqGaNkBECAwEAAaOCAnkwggJ1MB8GA1UdIwQYMBaAFEYgqVMbKAwcrvIoUYOzHr7yUxR8MB0GA1UdDgQWBBTi+/Z/uhu1Gxo8y9cuLIShB0aLPzAOBgNVHQ8BAf8EBAMCB4AwggEzBgNVHSAEggEqMIIBJjCCASIGC2CGGAECAQEFBwQBMIIBETAqBggrBgEFBQcCARYeaHR0cDovL2RlcG8ua2FtdXNtLmdvdi50ci9pbGtlMIHiBggrBgEFBQcCAjCB1R6B0gBCAHUAIABzAGUAcgB0AGkAZgBpAGsAYQAgAGkAbABlACAAaQBsAGcAaQBsAGkAIABzAGUAcgB0AGkAZgBpAGsAYQAgAHUABnAHUAbABhAG0AYQAgAGUAcwBhAHMAbABhAHIBMQBuATEAIABvAGsAdQBtAGEAawAgAGkA5wBpAG4AIABiAGUAbABpAHIAdABpAGwAZQBuACAAdwBlAGIAIABzAGkAdABlAHMAaQBuAGkAIAB6AGkAeQBhAHIAZQB0ACAAZQBkAGkAbgBpAHoALjAMBgNVHRMBAf8EAjAAMBYGA1UdJQQPMA0GC2CGGAECAQEFBzIBMEEGA1UdHwQ6MDgwNqA0oDKGMGh0dHA6Ly9kZXBvLmthbXVzbS5nb3YudHIva3VydW1zYWwvbW1lc2hzLXMxLmNybDCBggYIKwYBBQUHAQEEdjB0MDwGCCsGAQUFBzAChjBodHRwOi8vZGVwby5rYW11c20uZ292LnRyL2t1cnVtc2FsL21tZXNocy1zMS5jcnQwNAYIKwYBBQUHMAGGKGh0dHA6Ly9jaXNkdXBtbXMxLmt1cnVtc2FsLmthbXVzbS5nb3YudHIwDQYJKoZIhvcNAQELBQADggEBAIrY0OlTatDnCNPg6o49ZrTAubYb9+iHEH9LNF73WbgM3okmaSNnJGo8bwqlACbbKbZhXTh6MUqBo12RqbWxn9t5MdKTjGa/pQtuxmCDMpi/nYzAw6OZ9xMt5y8Ask0mBGAQA2K4tdfGmjuBox+K7o/rNfYkUmYi3JjPtl3XvVjOzWgD9FQn5/SVbELaR21omJNhnKXO3B+8aZHE/2UP5kXwXBdSRNOQkUAt+oRwl+s4tX6BGbx3TPMM0gmd51op8nzT4A07063v0Z2Xz8+dhIR3S40MVErJDxqkMTMuw/Kpue6Fpv2Wg6sndvOXjNnMIXUtKvFh3Iqb+zDeAo0NTVw="
+                //        }
+                //    },
+                //    Object = new XBRLObject()
+                //    {
+                //        QualifyingProperties = new QualifyingProperties()
+                //        {
+                //            SignedProperties = new SignedProperties()
+                //            {
+                //                Id = "Prop_Id_18a71503-483a-4519-ac0f-2a35f28d69ac",
+                //                SignedSignatureProperties = new SignedSignatureProperties()
+                //                {
+                //                    SignerRole = new SignerRole()
+                //                    {
+                //                        ClaimedRoles = new ClaimedRoles()
+                //                        {
+                //                            ClaimedRole = "Tedarikçi"
+                //                        }
+                //                    },
+                //                    SigningCertificate = new SigningCertificate()
+                //                    {
+                //                        Cert = new Cert()
+                //                        {
+                //                            CertDigest = new CertDigest()
+                //                            {
+                //                                DigestMethod = new DigestMethod()
+                //                                {
+                //                                    Algorithm = "http://www.w3.org/2001/04/xmlenc#sha256"
+                //                                },
+                //                                DigestValue = "k+Em8GKG/ahjqDmwrDylKkac9bzuC/5RmitlEwNFNuM="
+                //                            },
+                //                            IssuerSerial = new IssuerSerial()
+                //                            {
+                //                                X509IssuerName = "CN=Mali Mühür Elektronik Sertifika Hizmet Sağlayıcısı - Sürüm 1, C=TR",
+                //                                X509SerialNumber = "68824715313177025"
+                //                            }
+                //                        }
+                //                    },
+                //                    SigningTime = "2017-04-06T14:51:12.775+03:00"
+                //                }
+                //            },
+                //            Target = "#Signature_Id_46dcb742-b202-4691-bc6e-7527ca673d8e"
+                //        }
+                //    }
+                //} 
+                #endregion
             };
 
             var record = GetEntryHeaders();
-
             defter.Xbrl.AccountingEntries.EntryHeader = record;
 
             XmlManager oXmlManager = new XmlManager();
             string xmlText = oXmlManager.Serialize(defter, "yevmiye.xslt");
+            
             XDocument xDocument = XDocument.Parse(xmlText.Remove(0, 1));
             Console.Clear();
             Console.WriteLine(xDocument.ToString());
             Console.ReadKey();
-            Console.ReadLine();
-
-            goto test;
         }
 
         public static List<EntryHeader> GetEntryHeaders()
@@ -539,5 +553,6 @@ namespace Vol.ESystems.Core.Library.XBRL.TEST
 
             return entryHeaders;
         }
+
     }
 }

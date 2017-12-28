@@ -2,6 +2,9 @@ using System.Xml.Serialization;
 
 namespace Vol.ESystems.Core.Library.XBRL.Model
 {
+    /// <summary>
+    /// Belgenin iliþkili olduðu muhasebe fiþ numarasý yazýlacaktýr. 
+    /// </summary>
     [XmlRoot(ElementName = "documentReference", Namespace = "http://www.xbrl.org/int/gl/cor/2006-10-25")]
     public class DocumentReference
     {

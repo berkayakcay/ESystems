@@ -71,10 +71,12 @@
     <Compile Include="Cert.cs" />
     <Compile Include="CertDigest.cs" />
     <Compile Include="ClaimedRoles.cs" />
+    <Compile Include="NumberOfEntries.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="CreationDate.cs" />
     <Compile Include="Creator.cs" />
     <Compile Include="DebitCreditCode.cs" />
+    <Compile Include="Berat.cs" />
     <Compile Include="Defter.cs" />
     <Compile Include="DetailComment.cs" />
     <Compile Include="DigestMethod.cs" />
@@ -109,6 +111,10 @@
     <Compile Include="Language.cs" />
     <Compile Include="LineNumber.cs" />
     <Compile Include="LineNumberCounter.cs" />
+    <Compile Include="QualifierEntry.cs" />
+    <Compile Include="Segment.cs" />
+    <Compile Include="XbrlInclude.cs" />
+    <Compile Include="XbrlInfo.cs" />
     <Compile Include="XBRLObject.cs" />
     <Compile Include="OrganizationAddress.cs" />
     <Compile Include="OrganizationAddressCity.cs" />

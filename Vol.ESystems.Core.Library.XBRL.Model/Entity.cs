@@ -7,5 +7,8 @@ namespace Vol.ESystems.Core.Library.XBRL.Model
     {
         [XmlElement(ElementName = "identifier", Namespace = "http://www.xbrl.org/2003/instance")]
         public Identifier Identifier { get; set; }
+
+        [XmlElement(ElementName = "segment", Namespace = "http://www.xbrl.org/2003/instance")]
+        public Segment Segment { get; set; }
     }
 }
