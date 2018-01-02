@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Security;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
@@ -424,7 +427,63 @@ namespace Vol.ESystems.Core.Library.XBRL.TEST
             
             XDocument xDocument = XDocument.Parse(xmlText.Remove(0, 1));
             Console.Clear();
-            Console.WriteLine(xDocument.ToString());
+            //Console.WriteLine(xDocument.ToString());
+
+            /*    */
+
+            List<EDefter> list = new List<EDefter>()
+            {
+                new EDefter()
+                {
+                    Id = 1,
+                    FirstName = "Berkay",
+                    LastName = "AKÇAY"
+                },
+                new EDefter()
+                {
+                    Id = 1,
+                    FirstName = "Berkay",
+                    LastName = "AKÇAY"
+                },
+                new EDefter()
+                {
+                    Id = 1,
+                    FirstName = "Berkay",
+                    LastName = "AKÇAY"
+                },
+                new EDefter()
+                {
+                    Id = 1,
+                    FirstName = "Berkay",
+                    LastName = "AKÇAY"
+                },
+                new EDefter()
+                {
+                    Id = 1,
+                    FirstName = "Berkay",
+                    LastName = "AKÇAY"
+                },
+            };
+            
+
+            //CreateCSVFromGenericList(list, "export.csv");
+
+            bool folderExists = Directory.Exists($"{Directory.GetCurrentDirectory()}\\VOLANT\\eSystems\\eDefter");
+            if (!folderExists)
+            {
+                Directory.CreateDirectory($"{Directory.GetCurrentDirectory()}\\VOLANT\\eSystems\\eDefter");
+            }
+            CreateCSVFromGenericList(list, $"{Directory.GetCurrentDirectory()}\\VOLANT\\eSystems\\eDefter\\export.csv");
+
+            folderExists = false;
+
+            folderExists = Directory.Exists($"{Directory.GetDirectoryRoot(Directory.GetCurrentDirectory())}VOLANT\\eSystems\\eDefter");
+            if (!folderExists)
+            {
+                Directory.CreateDirectory($"{Directory.GetDirectoryRoot(Directory.GetCurrentDirectory())}VOLANT\\eSystems\\eDefter");
+            }
+            CreateCSVFromGenericList(list, $"{Directory.GetDirectoryRoot(Directory.GetCurrentDirectory())}VOLANT\\eSystems\\eDefter\\export.csv");
+            Process.Start("explorer.exe", $"{Directory.GetCurrentDirectory()}\\VOLANT\\eDefter");
             Console.ReadKey();
         }
 
@@ -554,5 +613,64 @@ namespace Vol.ESystems.Core.Library.XBRL.TEST
             return entryHeaders;
         }
 
+        public class EDefter
+        {
+            public Int64 Id { get; set; }
+            public String FirstName { get; set; }
+            public String LastName { get; set; }
+        }
+
+        /// <summary>
+        /// Creates the CSV from a generic list.
+        /// </summary>;
+        /// <typeparam name="T"></typeparam>;
+        /// <param name="list">The list.</param>;
+        /// <param name="csvNameWithExt">Name of CSV (w/ path) w/ file ext.</param>;
+        public static void CreateCSVFromGenericList<T>(List<T> list, string csvNameWithExt)
+        {
+            if (list == null || list.Count == 0) return;
+
+            //get type from 0th member
+            Type t = list[0].GetType();
+            string newLine = Environment.NewLine;
+
+            FileStream fs = null;
+            fs = new FileStream(csvNameWithExt, FileMode.CreateNew);
+
+            using (var sw = new StreamWriter(fs, Encoding.UTF8, 512))
+            {
+                //make a new instance of the class name we figured out to get its props
+                object o = Activator.CreateInstance(t);
+                //gets all properties
+                PropertyInfo[] props = o.GetType().GetProperties();
+
+                //foreach of the properties in class above, write out properties
+                //this is the header row
+                foreach (PropertyInfo pi in props)
+                {
+                    sw.Write(pi.Name + ";");
+                }
+                sw.Write(newLine);
+
+                //this acts as datarow
+                foreach (T item in list)
+                {
+                    //this acts as datacolumn
+                    foreach (PropertyInfo pi in props)
+                    {
+                        //this is the row+col intersection (the value)
+                        string whatToWrite =
+                            Convert.ToString(item.GetType()
+                                    .GetProperty(pi.Name)
+                                    .GetValue(item, null))
+                                .Replace(';', ' ') + ';';
+
+                        sw.Write(whatToWrite);
+
+                    }
+                    sw.Write(newLine);
+                }
+            }
+        }
     }
 }
